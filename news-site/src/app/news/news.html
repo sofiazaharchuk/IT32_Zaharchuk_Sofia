@@ -1,0 +1,18 @@
+<section class="news">
+  <h2 class="news__heading">Останні новини</h2>
+
+  <div class="news__grid">
+    @for (item of newsList; track item.title) {
+      <app-news-card
+        [title]="item.title"
+        [author]="item.author"
+        [description]="item.description"
+        (readClicked)="onNewsOpened($event)">
+      </app-news-card>
+    }
+  </div>
+
+  @if (message) {
+    <p class="news__status">{{ message }}</p>
+  }
+</section>
