@@ -1,0 +1,153 @@
+.page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+.header {
+  background: linear-gradient(90deg, #0f172a, #1e293b);
+  color: #fff;
+  padding: 24px 32px;
+  text-align: center;
+  border-radius: 0 0 16px 16px;
+  margin-bottom: 32px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 26px;
+}
+
+/* --- Форма додавання --- */
+.add-form {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 24px;
+  margin: 0 24px 32px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
+}
+
+.add-form h2 {
+  margin-top: 0;
+  font-size: 18px;
+  color: #0f172a;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.form-row input {
+  flex: 1;
+  min-width: 140px;
+  padding: 10px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.form-row input:focus {
+  outline: none;
+  border-color: #38bdf8;
+}
+
+.form-row button {
+  background-color: #38bdf8;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.form-row button:hover:not(:disabled) {
+  background-color: #0284c7;
+}
+
+.form-row button:disabled {
+  background-color: #cbd5e1;
+  cursor: not-allowed;
+}
+
+/* --- Список фільмів --- */
+.movies {
+  padding: 0 24px;
+}
+
+.counter {
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 16px;
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.movie-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+  transition: transform 0.2s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-4px);
+}
+
+.movie-card h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  color: #0f172a;
+}
+
+.movie-card p {
+  margin: 4px 0;
+  color: #475569;
+  font-size: 14px;
+}
+
+.recommended {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.delete-btn {
+  margin-top: 12px;
+  background-color: #fee2e2;
+  color: #b91c1c;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.delete-btn:hover {
+  background-color: #fecaca;
+}
+
+/* --- Динамічне оформлення за рейтингом --- */
+.rating-high {
+  border-left: 5px solid #16a34a;
+}
+
+.rating-medium {
+  border-left: 5px solid #f59e0b;
+}
+
+.rating-low {
+  border-left: 5px solid #ef4444;
+}
