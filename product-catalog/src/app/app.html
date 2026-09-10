@@ -1,0 +1,58 @@
+<div class="page">
+  <header class="header">
+    <h1>🛒 Каталог товарів</h1>
+  </header>
+
+  <section class="add-form">
+    <h2>Додати новий товар</h2>
+
+    <div class="form-row">
+      <input
+        type="text"
+        placeholder="Назва товару"
+        name="newName"
+        [(ngModel)]="newName"
+      />
+
+      <input
+        type="number"
+        placeholder="Ціна"
+        name="newPrice"
+        [(ngModel)]="newPrice"
+      />
+
+      <input
+        type="number"
+        placeholder="Кількість"
+        name="newQuantity"
+        [(ngModel)]="newQuantity"
+      />
+
+      <button
+        (click)="addProduct()"
+        [disabled]="!newName.trim() || newPrice === null || newQuantity === null"
+      >
+        Додати товар
+      </button>
+    </div>
+  </section>
+
+  <section class="products">
+    <p class="counter">Всього товарів: {{ productService.getProducts().length }}</p>
+
+    <div class="products-grid">
+      <div
+        class="product-card"
+        *ngFor="let product of productService.getProducts()"
+      >
+        <h3>{{ product.name }}</h3>
+        <p>Ціна: {{ product.price }} грн</p>
+        <p>Кількість: {{ product.quantity }}</p>
+
+        <button class="delete-btn" (click)="removeProduct(product.id)">
+          Видалити
+        </button>
+      </div>
+    </div>
+  </section>
+</div>
