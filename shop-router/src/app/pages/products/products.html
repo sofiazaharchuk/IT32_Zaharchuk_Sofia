@@ -1,0 +1,14 @@
+<div class="page-content">
+  <h1>Товари</h1>
+
+  <div class="products-grid">
+    <div class="product-card" *ngFor="let product of products">
+      <h3>{{ product.name }}</h3>
+      <p>Ціна: {{ product.price }} грн</p>
+
+      <a [routerLink]="['/product', product.id]" class="details-link">
+        Переглянути товар
+      </a>
+    </div>
+  </div>
+</div>
