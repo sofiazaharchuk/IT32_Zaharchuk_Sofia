@@ -1,0 +1,63 @@
+<div class="page-content">
+  <h1>Додати товар</h1>
+
+  <form #itemForm="ngForm" (ngSubmit)="addItem(itemForm)" class="add-form">
+
+    <div class="form-group">
+      <label for="name">Назва</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        [(ngModel)]="name"
+        #nameRef="ngModel"
+        required
+        minlength="3"
+        maxlength="50"
+      />
+      <div *ngIf="submitted && nameRef.invalid" class="error">
+        <small *ngIf="nameRef.errors?.['required']">Поле обов'язкове</small>
+        <small *ngIf="nameRef.errors?.['minlength']">Мінімум 3 символи</small>
+        <small *ngIf="nameRef.errors?.['maxlength']">Максимум 50 символів</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="manufacturer">Виробник</label>
+      <input
+        type="text"
+        id="manufacturer"
+        name="manufacturer"
+        [(ngModel)]="manufacturer"
+        #manufacturerRef="ngModel"
+        required
+        minlength="2"
+        maxlength="40"
+      />
+      <div *ngIf="submitted && manufacturerRef.invalid" class="error">
+        <small *ngIf="manufacturerRef.errors?.['required']">Поле обов'язкове</small>
+        <small *ngIf="manufacturerRef.errors?.['minlength']">Мінімум 2 символи</small>
+        <small *ngIf="manufacturerRef.errors?.['maxlength']">Максимум 40 символів</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Опис</label>
+      <textarea
+        id="description"
+        name="description"
+        [(ngModel)]="description"
+        #descriptionRef="ngModel"
+        required
+        minlength="10"
+        rows="4"
+      ></textarea>
+      <div *ngIf="submitted && descriptionRef.invalid" class="error">
+        <small *ngIf="descriptionRef.errors?.['required']">Поле обов'язкове</small>
+        <small *ngIf="descriptionRef.errors?.['minlength']">Мінімум 10 символів</small>
+      </div>
+    </div>
+
+    <button type="submit" class="submit-btn">Додати товар</button>
+  </form>
+</div>

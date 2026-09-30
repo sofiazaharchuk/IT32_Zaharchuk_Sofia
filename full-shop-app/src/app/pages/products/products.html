@@ -1,0 +1,14 @@
+<div class="page-content">
+  <h1>Товари</h1>
+
+  <div class="products-grid">
+    <div class="product-card" *ngFor="let product of productService.getItems()">
+      <h3>{{ product.name }}</h3>
+      <p>Виробник: {{ product.manufacturer }}</p>
+
+      <a [routerLink]="['/product', product.id]" class="details-link">
+        Детальніше
+      </a>
+    </div>
+  </div>
+</div>
