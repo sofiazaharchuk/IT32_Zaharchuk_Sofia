@@ -1,0 +1,80 @@
+<div class="page">
+  <h1>Додати товар</h1>
+
+  <form #itemForm="ngForm" (ngSubmit)="addItem(itemForm)" class="add-form">
+
+    <!-- Назва товару -->
+    <div class="form-group">
+      <label for="name">Назва товару</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        [(ngModel)]="newItem.name"
+        required
+        minlength="3"
+        maxlength="50"
+        #nameRef="ngModel"
+      />
+      <div *ngIf="submitted && nameRef.invalid" class="error">
+        <small *ngIf="nameRef.errors?.['required']">Назва товару обов'язкова</small>
+        <small *ngIf="nameRef.errors?.['minlength']">Назва повинна містити мінімум 3 символи</small>
+        <small *ngIf="nameRef.errors?.['maxlength']">Назва повинна містити максимум 50 символів</small>
+      </div>
+    </div>
+
+    <!-- Виробник -->
+    <div class="form-group">
+      <label for="manufacturer">Виробник</label>
+      <input
+        type="text"
+        id="manufacturer"
+        name="manufacturer"
+        [(ngModel)]="newItem.manufacturer"
+        required
+        minlength="2"
+        maxlength="40"
+        #manufacturerRef="ngModel"
+      />
+      <div *ngIf="submitted && manufacturerRef.invalid" class="error">
+        <small *ngIf="manufacturerRef.errors?.['required']">Вкажіть виробника</small>
+        <small *ngIf="manufacturerRef.errors?.['minlength']">Назва виробника повинна містити мінімум 2 символи</small>
+        <small *ngIf="manufacturerRef.errors?.['maxlength']">Назва виробника повинна містити максимум 40 символів</small>
+      </div>
+    </div>
+
+    <!-- Опис товару -->
+    <div class="form-group">
+      <label for="description">Опис товару</label>
+      <textarea
+        id="description"
+        name="description"
+        rows="4"
+        [(ngModel)]="newItem.description"
+        required
+        minlength="10"
+        maxlength="200"
+        #descriptionRef="ngModel"
+      ></textarea>
+      <div *ngIf="submitted && descriptionRef.invalid" class="error">
+        <small *ngIf="descriptionRef.errors?.['required']">Опис обов'язковий</small>
+        <small *ngIf="descriptionRef.errors?.['minlength']">Опис повинен містити мінімум 10 символів</small>
+        <small *ngIf="descriptionRef.errors?.['maxlength']">Опис повинен містити максимум 200 символів</small>
+      </div>
+    </div>
+
+    <button type="submit" class="submit-btn">Додати товар</button>
+  </form>
+
+  <section class="list">
+    <h2>Додані товари</h2>
+
+    <p class="empty" *ngIf="products.length === 0">Поки що жодного товару не додано.</p>
+
+    <div class="product-card" *ngFor="let product of products">
+      <h3>{{ product.name }}</h3>
+      <p>Виробник: {{ product.manufacturer }}</p>
+      <p>Опис: {{ product.description }}</p>
+    </div>
+  </section>
+</div>
