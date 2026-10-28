@@ -1,0 +1,137 @@
+/* Стилі сторінки /practice.
+   Звичайний (глобальний) CSS з префіксом practice-, щоб не конфліктувати з іншими стилями. */
+
+.practice-page {
+  min-height: 100vh;
+  padding: 40px 16px 56px;
+  background: #f4f7fb;
+  color: #14213d;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.practice-container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.practice-title {
+  margin: 0 0 6px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.practice-lead {
+  margin: 0 0 24px;
+  color: #5b6678;
+}
+
+.practice-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  margin-bottom: 18px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(20, 33, 61, 0.06);
+}
+
+.practice-field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.practice-select {
+  padding: 9px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  background: #ffffff;
+  color: #14213d;
+}
+
+.practice-select:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+.practice-button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.practice-button:hover {
+  background: #1d4ed8;
+}
+
+.practice-counter {
+  margin: 0 0 12px;
+  color: #5b6678;
+}
+
+.practice-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.practice-item {
+  display: grid;
+  grid-template-columns: 140px 1fr auto;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left: 5px solid #2563eb;
+  border-radius: 12px;
+}
+
+.practice-day {
+  font-weight: 700;
+  color: #1e3a8a;
+}
+
+.practice-subject {
+  font-weight: 500;
+}
+
+.practice-room {
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: #e0e9ff;
+  color: #1d4ed8;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.practice-empty {
+  padding: 28px;
+  text-align: center;
+  color: #7f1d1d;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .practice-item {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
